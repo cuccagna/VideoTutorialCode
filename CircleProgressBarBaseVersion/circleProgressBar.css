@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Lato", sans-serif;
+  background-color: #11edd7;
+}
+
+.progress-bar-card {
+  width: 300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  box-shadow: 0 0 20px 2px #d0d0d0;
+}
+
+.progress-bar-card .progress-bar {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.progress-bar-card .progress-bar svg circle {
+  fill: none;
+  stroke-width: 10px;
+  stroke: #000;
+
+  stroke-dasharray: 440;
+  stroke-dashoffset: 440;
+}
+
+.progress-bar-card .progress-bar svg circle.inner {
+  stroke: #d0d0d0;
+  stroke-dashoffset: 0;
+}
+
+.progress-bar-card .progress-bar svg circle.outer {
+  stroke: #11edd7;
+  animation: anim-progress-border 3s forwards;
+}
+
+@keyframes anim-progress-border {
+  100% {
+    stroke-dashoffset: 110; /* calc(440 - 440 * 75 / 100); */ /* 110 */
+  }
+}
+
+.progress-bar-card .progress-bar .percent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d0d0d0;
+}
+
+.progress-bar-card .progress-bar .percent h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-bar-card .progress-bar .percent h2 span.number {
+  font-size: 44px;
+  margin-left: 10px;
+  margin-right: 2px;
+}
+
+.progress-bar-card .progress-bar .percent h2 span:nth-of-type(2) {
+  font-size: 23px;
+}
+
+.progress-bar-card .text {
+  color: #d0d0d0;
+  padding: 10px 0 0;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
